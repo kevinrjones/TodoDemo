@@ -1,0 +1,11 @@
+<Configuration>
+  <SnapshotDialog>
+    <InitialDirectory>C:\home\kevinj\projects\capital\Todo</InitialDirectory>
+  </SnapshotDialog>
+  <CoverageFilters>
+    <IncludeFilters>
+      <Filter ModuleMask="*" ClassMask="*" FunctionMask="*" />
+    </IncludeFilters>
+    <ExcludeFilters />
+  </CoverageFilters>
+</Configuration>
