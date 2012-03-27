@@ -1,9 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Microsoft.Practices.Unity;
+using ToDo.Infrastructure;
+using TodoRepository.Interfaces;
+using TodoRepository.Repositories;
 
 namespace Todo
 {
@@ -31,10 +36,21 @@ namespace Todo
 
         protected void Application_Start()
         {
-            AreaRegistration.RegisterAllAreas();
+            IUnityContainer container = InitializeContainer();
+            DependencyResolver.SetResolver(new UnityDependencyResolver(container));
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
+        }
+
+        private IUnityContainer InitializeContainer()
+        {
+            var ctor = new InjectionConstructor(ConfigurationManager.ConnectionStrings["todo"].ConnectionString);
+
+            IUnityContainer container = new UnityContainer();
+            container.RegisterType<ITodoRepository, TodosRepository>(ctor);
+
+            return container;
         }
     }
 }
