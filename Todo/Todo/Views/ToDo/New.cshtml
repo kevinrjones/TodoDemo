@@ -1,0 +1,20 @@
+﻿@model Todo.Models.NewTodoVM
+
+@{
+    ViewBag.Title = "New Todo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>New Todo</h2>
+
+@using(Html.BeginForm("Create", "ToDo", FormMethod.Post, new{@class = "form"}))
+{
+    <fieldset>
+        <legend>New </legend>
+        <ul>
+            <li>@Html.LabelFor(m => m.Title) @Html.TextBoxFor(m=>m.Title) @Html.ValidationMessageFor(m=>m.Title)</li>
+            <li>@Html.LabelFor(m => m.Entry) @Html.EditorFor(m => m.Entry)  @Html.ValidationMessageFor(m=>m.Title)</li>
+        </ul>
+        <input type="submit" value="Create"/>
+    </fieldset>
+}

@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using Todo.Models;
 using TodoRepository.Interfaces;
-using TodoRepository.Repositories;
 
 namespace Todo.Controllers
 {
@@ -29,7 +25,8 @@ namespace Todo.Controllers
 
         public ActionResult New()
         {
-            return View();
+            NewTodoVM model = new NewTodoVM();
+            return View(model);
         }
 
         public ActionResult Create(NewTodoVM model)
