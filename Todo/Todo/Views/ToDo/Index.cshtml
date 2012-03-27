@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Todo.Models.TodoIndexVM>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<table>
+    @foreach(var m in Model)
+    {
+        <tr><td>@m.Title</td><td>@m.Entry</td></tr>
+    }
+</table>
