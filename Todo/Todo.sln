@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoModel", "ToDoModel\ToDo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoRepository", "ToDoRepository\ToDoRepository.csproj", "{555BF169-88EA-4EF1-B532-D152AF974680}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoTest", "TodoTest\TodoTest.csproj", "{A808697F-E77A-4075-8D30-2F47CFE64182}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Acceptance|Any CPU = Acceptance|Any CPU
@@ -48,6 +50,16 @@ Global
 		{6B41D66F-0003-45EC-9692-023F9FCA62E8}.Staging|Any CPU.Build.0 = Staging|Any CPU
 		{6B41D66F-0003-45EC-9692-023F9FCA62E8}.Test|Any CPU.ActiveCfg = Test|Any CPU
 		{6B41D66F-0003-45EC-9692-023F9FCA62E8}.Test|Any CPU.Build.0 = Test|Any CPU
+		{A808697F-E77A-4075-8D30-2F47CFE64182}.Acceptance|Any CPU.ActiveCfg = Release|Any CPU
+		{A808697F-E77A-4075-8D30-2F47CFE64182}.Acceptance|Any CPU.Build.0 = Release|Any CPU
+		{A808697F-E77A-4075-8D30-2F47CFE64182}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A808697F-E77A-4075-8D30-2F47CFE64182}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A808697F-E77A-4075-8D30-2F47CFE64182}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A808697F-E77A-4075-8D30-2F47CFE64182}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A808697F-E77A-4075-8D30-2F47CFE64182}.Staging|Any CPU.ActiveCfg = Release|Any CPU
+		{A808697F-E77A-4075-8D30-2F47CFE64182}.Staging|Any CPU.Build.0 = Release|Any CPU
+		{A808697F-E77A-4075-8D30-2F47CFE64182}.Test|Any CPU.ActiveCfg = Release|Any CPU
+		{A808697F-E77A-4075-8D30-2F47CFE64182}.Test|Any CPU.Build.0 = Release|Any CPU
 		{F59730B9-77D0-4404-9AED-AD83E31E2570}.Acceptance|Any CPU.ActiveCfg = Release|Any CPU
 		{F59730B9-77D0-4404-9AED-AD83E31E2570}.Acceptance|Any CPU.Build.0 = Release|Any CPU
 		{F59730B9-77D0-4404-9AED-AD83E31E2570}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
