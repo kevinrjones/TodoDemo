@@ -13,7 +13,8 @@
         <legend>New </legend>
         <ul>
             <li>@Html.LabelFor(m => m.Title) @Html.TextBoxFor(m=>m.Title) @Html.ValidationMessageFor(m=>m.Title)</li>
-            <li>@Html.LabelFor(m => m.Entry) @Html.EditorFor(m => m.Entry)  @Html.ValidationMessageFor(m=>m.Title)</li>
+            <li>@Html.LabelFor(m => m.Entry) @Html.EditorFor(m => m.Entry)  @Html.ValidationMessageFor(m=>m.Entry)</li>
+            <li>@Html.LabelFor(m => m.File) @Html.EditorFor(m => m.File)  @Html.ValidationMessageFor(m=>m.File)</li>
         </ul>
         <input type="submit" value="Create"/>
     </fieldset>
