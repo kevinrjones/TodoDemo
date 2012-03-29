@@ -87,22 +87,22 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Add todo items")]
-        [NUnit.Framework.TestCaseAttribute("hello", "goodbye", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("fred", "goodwin", new string[0])]
-        public virtual void AddTodoItems(string title, string entry, string[] exampleTags)
+        [NUnit.Framework.DescriptionAttribute("Update a todo item")]
+        public virtual void UpdateATodoItem()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add todo items", exampleTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Update a todo item", ((string[])(null)));
 #line 14
 this.ScenarioSetup(scenarioInfo);
 #line 15
- testRunner.Given(string.Format("I have entered {0} into the form", title));
+ testRunner.Given("I am on the index page");
 #line 16
- testRunner.And(string.Format("I have entered an {0} into the form", entry));
+ testRunner.And("I select an item to be edited");
 #line 17
- testRunner.When("I press new");
+ testRunner.And("I change its title");
 #line 18
- testRunner.Then("the todo is listed on the index page");
+ testRunner.When("I press update");
+#line 19
+ testRunner.Then("the updated title is displayed");
 #line hidden
             this.ScenarioCleanup();
         }

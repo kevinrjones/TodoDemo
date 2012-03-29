@@ -89,6 +89,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ValidationController.cs" />
+    <Compile Include="Filters\AcitiveDirectoryAuthorizationFilter.cs" />
+    <Compile Include="Models\EditViewModel.cs" />
     <Compile Include="Models\NewTodoVM.cs" />
     <Compile Include="Controllers\ToDoController.cs" />
     <Compile Include="Global.asax.cs">
@@ -189,6 +191,7 @@
   <ItemGroup>
     <None Include="Content\colors.less" />
     <None Include="Content\Site.less" />
+    <Content Include="Views\ToDo\Edit.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -35,11 +35,11 @@ namespace TodoTest.Controllers
         [Test]
         public void GivenAListOfTodos_WhenTheIndexActionIsExecuted_ThenTheFullListIsReturned()
         {
-            _repository.Setup(r => r.GetTodos()).Returns(new List<TodoModel.Todo>{new TodoModel.Todo()});
+            _repository.Setup(r => r.GetTodos()).Returns(new List<TodoModel.Todo> { new TodoModel.Todo() });
             var controller = new ToDoController(_repository.Object);
             var result = controller.Index() as ViewResult;
             var model = result.Model as IList<TodoIndexVM>;
-            
+
             Assert.That(model.Count, Is.EqualTo(1));
         }
 
@@ -58,6 +58,16 @@ namespace TodoTest.Controllers
             ToDoController controller = new ToDoController(null);
             var result = controller.Create(new NewTodoVM());
             Assert.That(result, Is.TypeOf(typeof(RedirectToRouteResult)));
+        }
+
+        [Test]
+        public void WhenEditIsCalledForASpecificTodo_ThenTheEditActionReturnsTheEditViewForThatTodo()
+        {
+            ToDoController controller = new ToDoController(null);
+            var result = controller.Edit(1) as ViewResult;
+            var model = result.Model as EditViewModel;
+
+            Assert.That(model.Id, Is.EqualTo(1));
         }
     }
 }

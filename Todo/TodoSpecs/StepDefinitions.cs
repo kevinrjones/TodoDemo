@@ -14,7 +14,7 @@ namespace TodoSpecs
     public class StepDefinitions
     {
         private IWebDriver _webDriver;
- 
+
         [BeforeScenario()]
         public void BeforeScenario()
         {
@@ -28,21 +28,24 @@ namespace TodoSpecs
             _webDriver.Quit();
         }
 
-        [Given(@"I have entered a title into the form")]        
+        [Given(@"I have entered a title into the form")]
+        [Given(@"I change its title")]
         public void GivenIHaveEnteredATitleIntoTheForm()
         {
             var elem = _webDriver.FindElement(By.Id("Title"));
-            elem.SendKeys("Title");
+            elem.Clear();
+            elem.SendKeys("Goodbye");
         }
-        
+
         [Given(@"I have entered an entry into the form")]
         public void GivenIHaveEnteredAnEntryIntoTheForm()
         {
             var elem = _webDriver.FindElement(By.Id("Entry"));
             elem.SendKeys("Entry");
         }
-        
+
         [When(@"I press new")]
+        [When(@"I press update")]
         public void WhenIPressNew()
         {
             var elem = _webDriver.FindElement(By.ClassName("form"));
@@ -50,11 +53,24 @@ namespace TodoSpecs
         }
 
         [Then(@"the todo is listed on the index page")]
+        [Then(@"the updated title is displayed")]
         public void ThenTheTodoIsListedOnTheIndexPage()
         {
             var elem = _webDriver.FindElement(By.Id("todolist"));
             Assert.That(elem, Is.Not.Null);
         }
 
+        [Given(@"I am on the index page")]
+        public void GivenIAmOnTheIndexPage()
+        {
+            _webDriver.Navigate().GoToUrl("http://localhost:1398/");
+       }
+
+        [Given(@"I select an item to be edited")]
+        public void GivenISelectAnItemToBeEdited()
+        {
+            var elem = _webDriver.FindElement(By.LinkText("Goodbye"));
+            elem.Click();
+        }
     }
 }

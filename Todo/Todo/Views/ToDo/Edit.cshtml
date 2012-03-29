@@ -1,0 +1,21 @@
+﻿@model Todo.Models.EditViewModel
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit Todo</h2>
+
+@using(Html.BeginForm("Update", "ToDo", FormMethod.Post, new{@class = "form"}))
+{    
+    <fieldset>
+        <legend>Edit </legend>
+        @Html.HiddenFor(m => m.Id)
+        <ul>
+            <li>@Html.LabelFor(m => m.Title) @Html.TextBoxFor(m=>m.Title) @Html.ValidationMessageFor(m=>m.Title)</li>
+            <li>@Html.LabelFor(m => m.Entry) @Html.EditorFor(m => m.Entry)  @Html.ValidationMessageFor(m=>m.Entry)</li>
+        </ul>
+        <input type="submit" value="Update"/>
+    </fieldset>
+}

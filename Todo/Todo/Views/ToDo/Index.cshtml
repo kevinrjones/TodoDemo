@@ -10,6 +10,6 @@
 <table id="todolist">
     @foreach(var m in Model)
     {
-        <tr><td>@m.Title</td><td>@m.Entry</td></tr>
+        <tr><td>@Html.ActionLink(m.Title, "edit", new {Id = m.Id})</td><td>@m.Entry</td></tr>
     }
 </table>
